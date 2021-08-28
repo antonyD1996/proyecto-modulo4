@@ -1,0 +1,71 @@
+@import url(https://fonts.googleapis.com/css?family=Amaranth:400,400italic,700italic,700)
+
+.c-card *
+    box-sizing: border-box
+
+body
+    font-family: "Amaranth", sans-serif
+    text-align: center
+    background-color: #edf3f8
+
+.card-container
+    max-width: 900px
+    margin: 0 auto
+
+.c-card
+    display: inline-block
+    width: 100%
+    max-width: 350px
+    margin: 20px
+    cursor: pointer
+    transition: all 0.3s ease
+    text-align: left
+    background: #fff
+    box-shadow: 0 6px 10px -5px rgba(0, 0, 0, 0.3)
+
+    &:hover
+        transform: translateY(-5px)
+        box-shadow: 0 20px 20px -15px rgba(0, 0, 0, 0.3)
+
+    &__body
+        padding: 20px
+
+    &__title
+        font-size: 15px
+        font-weight: 700
+        line-height: 1.2
+        margin: 0
+        padding: 0
+        text-transform: uppercase
+
+    &__subtitle
+        font-size: 13px
+        margin-top: 5px
+        padding: 0
+
+    &__intro
+        margin-bottom: 0
+
+    &__footer
+        padding: 10px
+        border-top: 1px solid #ddd
+
+.c-card--center
+    text-align: center
+
+.c-card--wide
+    max-width: 740px
+
+.c-card
+    &__header
+        float: left
+
+    &__body
+        float: left
+        padding-top: 30px
+
+.card-header-first
+    margin-top: -40px
+    height: 20%
+    background: #F27329
+    box-shadow: 1px 5px 15px #a2a2a2

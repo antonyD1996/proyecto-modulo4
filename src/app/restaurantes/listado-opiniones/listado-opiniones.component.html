@@ -1,0 +1,104 @@
+<div class="container">
+  <div class="card-big mb-3 border-btn-nuevo">
+    <div class="fill">
+      <img
+        class="card-img-top"
+        src="{{ resumenRestaurante._id.Categoria.Fondo }}"
+        alt=""
+      />
+    </div>
+
+    <div class="card-body">
+      <h4 class="card-title mb-3">
+        Restaurante {{ resumenRestaurante._id.Nombre }}
+      </h4>
+      <p class="card-text">
+        <span class="icono-titles">
+          <i class="fas fa-map-marker-alt"></i>
+        </span>
+        {{ resumenRestaurante._id.Direccion }}
+      </p>
+      <p class="card-text">
+        <span class="icono-titles">
+          <i class="fas fa-phone"></i>
+        </span>
+        <small class="text-muted">{{ resumenRestaurante._id.Telefono }}</small>
+      </p>
+      <div class="row">
+        <div class="col text-end">
+          <span class="icono">
+            <i
+              *ngFor="let start of resumenRestaurante.Estrellas"
+              class="fas fa-star me-1"
+            ></i>
+          </span>
+          <!-- <p class="badge bg-success mx-2">
+            {{ resumenRestaurante.Mayor }}
+            <i class="fas fa-chevron-up"></i>
+          </p>
+          <p class="badge bg-danger">
+            {{ resumenRestaurante.Menor }}
+            <i class="fas fa-chevron-down"></i>
+          </p> -->
+          <small class="ms-3">{{ opiniones.length }} Opiniones</small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="py-4 d-flex justify-content-between">
+      <h3 class="text-muted">{{ leyenda }}</h3>
+      <button (click)="redirect()" class="btn btn-white border-btn-nuevo">
+        <span class="icono">
+          <i class="fas fa-plus"></i>
+          Agregar Opinion
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div *ngFor="let opinion of opiniones" class="col-lg-4 col-md-12 mb-4">
+      <div class="c-card border rounded p-3 border-light">
+        <div class="card-header-first rounded py-3 mb-3 c-card--center">
+          <h2 class="text-sm-center text-white">
+            {{ opinion.Nombre }}
+          </h2>
+        </div>
+        <div class="text-center border-bottom mb-3 pb-2">
+          <p class="card-text text-sm-left">"{{ opinion.Comentario }}"</p>
+        </div>
+        <div class="row d-flex align-items-center">
+          <div class="col align-items-center">
+            <div class="row align-items-center">
+              <div class="d-flex justify-content-start">
+                <span class="icono">
+                  <i
+                    *ngFor="let start of opinion.Estrellas"
+                    class="fas fa-star me-1"
+                  ></i>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="row">
+              <div class="d-flex justify-content-end">
+                <a (click)="editarOpinion(opinion._id)" class="btn-sm">
+                  <span class="icono">
+                    <i class="fas fa-pen"></i>
+                  </span>
+                </a>
+                <a (click)="eliminarOpinion(opinion._id)" class="btn-sm ms-1">
+                  <span class="icono">
+                    <i class="fas fa-trash"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

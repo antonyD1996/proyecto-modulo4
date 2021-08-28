@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="card-text-center">
+        <div class="card-body text-muted">
+          <h3>{{ accion }} Opinion</h3>
+          <div class="col-8 mt-4">
+            <form [formGroup]="opinionForm" (ngSubmit)="enviar()">
+              <div class="col-auto mb-3">
+                <div class="input-group">
+                  <div class="input-group-text">
+                    <img src="/assets/svg/file-text.svg" />
+                  </div>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nombre"
+                    placeholder="Ingresa tu nombre"
+                    formControlName="Nombre"
+                  />
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="comentario" class="form-label">Comentario</label>
+                <textarea
+                  class="form-control"
+                  aria-label="With textarea"
+                  id="comentario"
+                  formControlName="Comentario"
+                  placeHolder="Ingresa tu comentario"
+                ></textarea>
+              </div>
+
+              <div class="mb-2 col-5">
+                <label for="puntuacion" class="form-label">Puntuacion</label>
+                <select
+                  class="form-select"
+                  aria-label="Default select example"
+                  id="puntuacion"
+                  formControlName="Puntuacion"
+                >
+                  <option selected>1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+              </div>
+
+              <div class="mb-3 d-grid gap-2 col-4 mx-auto">
+                <button
+                  [disabled]="!opinionForm.valid"
+                  class="btn btn-orange btn-lg mt-3"
+                >
+                  Guardar
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
