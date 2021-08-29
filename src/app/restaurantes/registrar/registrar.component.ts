@@ -5,6 +5,7 @@ import { Categoria } from 'src/app/entidades/categoria';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Restaurante } from './../../entidades/restaurante';
 import { ToastService } from 'angular-toastify';
+import * as myGlobals from '../../globals'
 
 @Component({
   selector: 'app-registrar',
@@ -14,7 +15,7 @@ import { ToastService } from 'angular-toastify';
 export class RegistrarComponent implements OnInit {
 
   restauranteForm!: FormGroup
-  urlBase: string = 'http://localhost:3000/restaurantes/'
+  urlBase: string = myGlobals.URL_BASE + 'restaurantes/'
   accion: string = 'Registrar'
   idRestaurante!: string;
   restaurante: Restaurante = {} as Restaurante;

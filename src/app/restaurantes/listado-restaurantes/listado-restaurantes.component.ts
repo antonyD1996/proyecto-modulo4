@@ -4,6 +4,7 @@ import { Restaurante } from './../../entidades/restaurante';
 import { Router } from '@angular/router';
 import { Categoria } from './../../entidades/categoria';
 import { ToastService } from 'angular-toastify';
+import * as myGlobals from '../../globals'
 
 
 @Component({
@@ -14,7 +15,7 @@ import { ToastService } from 'angular-toastify';
 export class ListadoRestaurantesComponent implements OnInit {
 
   restaurantes: Restaurante[] = []
-  urlBase: string = 'http://localhost:3000/restaurantes/'
+  urlBase: string = myGlobals.URL_BASE + 'restaurantes/'
   categorias: Categoria[] = [
     { id: 1, Nombre: 'Comida China', Fondo: 'assets/images/china.jpg' },
     { id: 2, Nombre: 'Comida Mexicana', Fondo: 'assets/images/mexicana.jpg' },

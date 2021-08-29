@@ -25,3 +25,4 @@ import { AgregarOpinionComponent } from './agregar-opinion/agregar-opinion.compo
   ]
 })
 export class RestaurantesModule { }
+

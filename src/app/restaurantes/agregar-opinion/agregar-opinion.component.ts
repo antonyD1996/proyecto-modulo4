@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common'
 import { Opinion } from './../../entidades/opinion';
 import { ToastService } from 'angular-toastify';
+import * as myGlobals from '../../globals'
 
 @Component({
   selector: 'app-agregar-opinion',
@@ -13,7 +14,7 @@ import { ToastService } from 'angular-toastify';
 })
 export class AgregarOpinionComponent implements OnInit {
 
-  urlBase: string = 'http://localhost:3000/opiniones/'
+  urlBase: string = myGlobals.URL_BASE + 'opiniones/'
   id!: string;
   opinionForm!: FormGroup
   opinion: Opinion = { Nombre: 'Carlos' } as Opinion;

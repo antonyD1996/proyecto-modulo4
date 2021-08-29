@@ -12,18 +12,22 @@
       <h4 class="card-title mb-3">
         Restaurante {{ resumenRestaurante._id.Nombre }}
       </h4>
-      <p class="card-text">
-        <span class="icono-titles">
-          <i class="fas fa-map-marker-alt"></i>
-        </span>
-        {{ resumenRestaurante._id.Direccion }}
-      </p>
-      <p class="card-text">
-        <span class="icono-titles">
-          <i class="fas fa-phone"></i>
-        </span>
+      <span class="icono-titles">
+        <i class="fas fa-phone me-2"></i>
         <small class="text-muted">{{ resumenRestaurante._id.Telefono }}</small>
-      </p>
+      </span>
+      <span class="icono-titles mx-3">
+        <i class="fas fa-map-marker-alt"></i>
+        {{ resumenRestaurante._id.Direccion }}
+      </span>
+
+      <span class="icono-titles">
+        <i class="fas fa-utensils me-2"></i>
+        <small class="text-muted">{{
+          resumenRestaurante._id.Categoria.Nombre
+        }}</small>
+      </span>
+
       <div class="row">
         <div class="col text-end">
           <span class="icono">

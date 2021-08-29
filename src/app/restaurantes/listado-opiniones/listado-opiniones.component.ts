@@ -6,6 +6,7 @@ import { Opinion } from 'src/app/entidades/opinion';
 import { Resumen } from './../../entidades/resumen';
 import { Restaurante } from './../../entidades/restaurante';
 import { ToastService } from 'angular-toastify';
+import * as myGlobals from '../../globals'
 
 @Component({
   selector: 'app-listado-opiniones',
@@ -15,7 +16,7 @@ import { ToastService } from 'angular-toastify';
 export class ListadoOpinionesComponent implements OnInit {
 
   opiniones: Opinion[] = []
-  urlBase: string = 'http://localhost:3000/opiniones/'
+  urlBase: string = myGlobals.URL_BASE + 'opiniones/'
   id!: string;
   resumenRestaurante: Resumen = {} as Resumen;
   leyenda: string = 'Opiniones';
